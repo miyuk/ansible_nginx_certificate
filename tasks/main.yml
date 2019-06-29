@@ -1,0 +1,8 @@
+---
+- name: Update certificate (Service)
+  include_tasks: service_nginx.yml
+  when: nginx_daemon_type == 'service'
+
+- name: Update certificate (Container)
+  include_tasks: docker_nginx.yml
+  when: nginx_daemon_type == 'docker'

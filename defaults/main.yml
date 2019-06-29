@@ -1,0 +1,20 @@
+---
+# Config Certificate source
+nginx_src_crt_path: "{{ certificate_directory }}/{{ certificate_crt_filename }}"
+nginx_src_key_path: "{{ certificate_directory }}/{{ certificate_crt_filename }}"
+
+# Config Certificate destination
+nginx_dest_crt_force_create: yes
+nginx_dest_key_force_create: yes
+nginx_dest_crt_path: /etc/nginx/certs/server.crt
+nginx_dest_key_path: /etc/nginx/certs/server.key
+nginx_dest_crt_mode: 0644
+nginx_dest_key_mode: 0600
+nginx_dest_files_owner: root
+nginx_dest_files_group: root
+
+# Config restart handler
+nginx_restart: yes
+nginx_docker_dir: /opt/nginx
+nginx_daemon_type: docker
+nginx_docker_name: nginx

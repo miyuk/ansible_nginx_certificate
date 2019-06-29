@@ -1,0 +1,20 @@
+---
+- name: Upload certificate file
+  copy:
+    src: "{{ nginx_src_crt_path }}"
+    dest: "{{ nginx_dest_crt_path }}"
+    mode: "{{ nginx_dest_crt_mode }}"
+    owner: "{{ nginx_dest_files_owner }}"
+    group: "{{ nginx_dest_files_group }}"
+    force: "{{ nginx_dest_crt_force_create }}"
+  notify: restart_docker_nginx
+
+- name: Upload private key file
+  copy:
+    src: "{{ nginx_src_key_path }}"
+    dest: "{{ nginx_dest_key_path }}"
+    mode: "{{ nginx_dest_key_mode }}"
+    owner: "{{ nginx_dest_files_owner }}"
+    group: "{{ nginx_dest_files_group }}"
+    force: "{{ nginx_dest_key_force_create }}"
+  notify: restart_docker_nginx
