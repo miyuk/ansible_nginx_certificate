@@ -1,8 +1,8 @@
 ---
-- name: Update certificate (Service)
+- name: サービス型NGINXの証明書更新
   include_tasks: service_nginx.yml
   when: nginx_daemon_type == 'service'
 
-- name: Update certificate (Container)
+- name: コンテナ型NGINXの証明書更新
   include_tasks: docker_nginx.yml
   when: nginx_daemon_type == 'docker'

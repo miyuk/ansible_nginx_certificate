@@ -1,9 +1,9 @@
 ---
-# Config Certificate source
+# ローカルホスト側の証明書パス
 nginx_src_crt_path: "{{ certificate_directory }}/{{ certificate_crt_filename }}"
 nginx_src_key_path: "{{ certificate_directory }}/{{ certificate_crt_filename }}"
 
-# Config Certificate destination
+# 配置するサーバ側の証明書パス
 nginx_dest_crt_force_create: yes
 nginx_dest_key_force_create: yes
 nginx_dest_crt_path: /etc/nginx/certs/server.crt
@@ -13,7 +13,7 @@ nginx_dest_key_mode: 0600
 nginx_dest_files_owner: root
 nginx_dest_files_group: root
 
-# Config restart handler
+# 更新後のNGINX再起動設定
 nginx_restart: yes
 nginx_docker_dir: /opt/nginx
 nginx_daemon_type: docker

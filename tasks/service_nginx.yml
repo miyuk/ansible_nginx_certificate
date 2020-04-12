@@ -1,5 +1,5 @@
 ---
-- name: Upload certificate file
+- name: NGINXサーバへ証明書ファイルアップロード
   copy:
     src: "{{ nginx_src_crt_path }}"
     dest: "{{ nginx_dest_crt_path }}"
@@ -9,7 +9,7 @@
     force: "{{ nginx_dest_crt_force_create }}"
   notify: restart_service_nginx
 
-- name: Upload private key file
+- name: NGINXサーバへ秘密鍵ファイルアップロード
   copy:
     src: "{{ nginx_src_key_path }}"
     dest: "{{ nginx_dest_key_path }}"
